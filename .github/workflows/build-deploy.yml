@@ -38,6 +38,10 @@ jobs:
             mv "$SUBDIR"/* output/
             rm -rf "$SUBDIR"
           fi
+          # Copy CANCIONERO.pdf into output so Pages can serve it
+          if [ -f CANCIONERO.pdf ]; then
+            cp CANCIONERO.pdf output/
+          fi
           # Evitar problemas con Jekyll
           touch output/.nojekyll
           echo "=== AFTER FIX ==="
